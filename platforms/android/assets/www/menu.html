@@ -1,0 +1,460 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        padding-top: 20px;
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <style>
+            body {
+                padding-bottom: 20px;
+            }
+			
+			
+			.login_title span.title-icon{ width:180px !important;}
+			
+			.glyphicon { margin-right:5px;}
+			.section-box h2 { margin-top:0px;}
+			.section-box h2 a { font-size:15px; }
+			.glyphicon-heart { color:#e74c3c;}
+			.glyphicon-comment { color:#27ae60;}
+			.separator { padding-right:5px;padding-left:5px; }
+			.section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
+			.post_title{ font-size:20px;}
+			.comment_validation{ display:none; font-size:12px; color:#f00;}
+			
+			
+
+.news_heading,.news_description,.news_time{ color:#34a1da; font-size:14px;}
+.news_heading{ font-size:16px;}
+.news-wrp .inner-itenanry-box{ border-bottom:1px solid #34a1da; padding-bottom:15px;}
+
+			
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="css/font-awesome.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+       
+        <style>
+		.col-md-6, col-sm-6, col-xs-6{
+    border: 1px solid #FFF;
+		}
+		</style>
+        
+    </head>
+    <body onLoad="onLoad()" style="margin-top: 2px;">
+   <a id="ham-menu" href="javascript:void(0)"><img width="25" src="img/hamburg-menu_03.png"/></a>
+    
+    <div class="off-canvas-menu-wrp">
+    
+    <a id="ham-menu-close" href="javascript:void(0)">MENU</a>
+    
+<ul class="top-link">
+<li class="drop-link"><a class="" href="profile_edit.html"><i class="fa fa-user"></i>&nbsp;&nbsp;My Profile</a></li>
+<li class="drop-link"><a class="" href="Itinerary.html"><i class="fa fa-map-o"></i>&nbsp;&nbsp;Itinerary</a></li>
+<li class="drop-link"><a class="" href="news.html"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;News and Updates</a></li>
+<li class="drop-link"><a class="" href="discussion_board.html"><i class="fa fa-comment"></i>&nbsp;&nbsp;Discussion Board</a></li>
+<li class="drop-link"><a class="" href="gallery.html"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Gallery</a></li>
+<li  class="drop-link"><a class="" href="things.html"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Things To Do</a></li>
+<li  class="drop-link"><a class="" href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+<li  class="drop-link"><a class="" href="about.html"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a></li>
+<li  class="drop-link"><a class="logout_btn" href="javascript:void(0)"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+<!--<li><a class="contact-home" href="javascript:void(0)">Contact</a></li>-->
+</ul>
+</div>
+    
+    
+    <div class="container">
+    
+      <!-- Example row of columns -->
+   		
+        
+      <div class="row">
+      	<div class="col-sm-12 col-xs-12 bluehead" >
+        	
+            
+        <div class="login_title"><span class="title-icon about-icon">Menu</span></div>
+   </div>
+   <div class="col-sm-12 col-xs-12" >
+        
+        
+        <div class="main-menu-wrp">
+        <div class="row">
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 green">
+        <div class="inner-menu-wrp-main">
+        <a href="profile_edit.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-user"></i><br/>My Profile</p>
+
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 blue">
+        <div class="inner-menu-wrp-main">
+        <a href="Itinerary.html" >
+        <div class="inner-menu-pic">
+        
+        <p><i class="fa fa-map-o"></i><br/>Itinerary</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 orange">
+        <div class="inner-menu-wrp-main">
+        <a href="news.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-newspaper-o"></i><br/>News and<br/> Updates</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 gray">
+        <div class="inner-menu-wrp-main">
+        <a href="discussion_board.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-comment"></i><br/>Discussion<br/> Board</p> 
+        </div>
+       
+        </a>
+        </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 yellow">
+        <div class="inner-menu-wrp-main">
+        <a href="gallery.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-picture-o"></i><br/>Gallery</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 purple">
+        <div class="inner-menu-wrp-main">
+        <a href="things.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-list-alt"></i><br/>Things To<br/> Do</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        
+       
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 red">
+        <div class="inner-menu-wrp-main">
+        <a href="contact.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-envelope"></i><br/>Contact Us</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+         <div class="col-md-6 col-sm-6 col-xs-6 col34">
+        <div class="inner-menu-wrp-main">
+        <a href="about.html">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-info-circle"></i><br/>About</p>
+        </div>
+        
+        </a>
+        </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-sm-6 col-xs-6 green2">
+        <div class="inner-menu-wrp-main">
+        <a  class="logout_btn" href="javascript:void(0)">
+        <div class="inner-menu-pic">
+        <p><i class="fa fa-power-off"></i><br/>Logout</p>
+        </div>
+       
+        </a>
+        </div>
+        </div>
+        
+        
+        
+        <div class="clearfix"></div>
+        </div>    
+        </div> 
+       
+      
+      </div>
+   
+    </div> <!-- /container -->      
+    
+
+       <script type="text/javascript" src="cordova.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+		 /////////////////////////////////////////////////////////////
+
+					 function onLoad() {
+
+						document.addEventListener("deviceready", onDeviceReady, false);
+
+					   
+
+					}
+
+	
+
+	
+
+					function onDeviceReady() {
+
+						// Register the event listener
+
+						document.addEventListener("backbutton", exitCallback, false);
+
+					}
+
+  
+
+  
+
+						function exitCallback() {
+
+					
+
+                    		navigator.notification.confirm('Do you want to exit?',confirmexitCallback);
+
+                     }
+
+                
+
+				
+
+				function confirmexitCallback(buttonIndex) {
+
+						if(buttonIndex == 1) {
+
+					   navigator.app.exitApp(); 
+
+						}
+
+						else {
+
+						   
+
+						}
+
+                } 
+
+  /////////////////////////////////////////////////////////////
+		
+		
+		</script>
+
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+		var post='';
+			$(document).ready(function(){
+				
+				////////
+				
+					$('.logout_btn').click(function(){
+				 logoutCallback();
+				
+				})	
+			
+			function logoutCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmlogoutCallback);
+                    }
+                function confirmlogoutCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                   window.location.href='logout.html'
+                    }
+                else {
+                   
+                    }
+                } 
+				
+				
+				///////
+				
+				
+				
+				$('body').on('click','.discussion-main-wrp',function(){
+				
+				window.location.href='about_inner.html';
+				
+				})
+				
+				$('#tab-content div.Itinerary-inner').hide();
+$('#tab-content div.Itinerary-inner:first').show();
+
+$('#nav li').click(function() {
+    $('#nav li a').removeClass("active");
+    $(this).find('a').addClass("active");
+    $('#tab-content div.Itinerary-inner').hide();
+
+    var indexer = $(this).index(); //gets the current index of (this) which is #nav li
+    $('#tab-content div.Itinerary-inner:eq(' + indexer + ')').fadeIn(); //uses whatever index the link has to open the corresponding box 
+});
+
+if( /iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    $('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'); 
+                                                var div_size = $('.off-canvas-menu-wrp').css('left');                                               
+                                                var fields = div_size.split('px');                                              
+                                                if ( fields[0] > 0 ) { 
+                                                    val = "0px";
+                                                } else {
+                                                    val = "100%";
+                                                }
+						$navigacia.animate({
+								left: val
+						}, 300);
+		
+				});
+}else{
+
+
+$('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'),
+								val = $navigacia.css('left') === '100%' ? '0px' : '100%';
+						$navigacia.animate({
+								left: val
+						}, 300)
+		
+				});
+
+			
+    }
+
+		
+		$('.off-canvas-menu-wrp ul li').on('click',function(){
+			$('.off-canvas-menu-wrp ul li').removeClass('act');
+			$(this).addClass('act');
+			
+			});
+			
+		
+		$('ul.bottom-nav-lst li.nav-drop-lnk').hover(function(){
+		$(this).find('.menu-container').fadeIn('slow');
+		},function(){
+			
+			$('.menu-container').fadeOut('fast');
+			
+			});		
+
+			$('.menu-container').hover(function(){
+				
+				$(this).css('display','block');
+				
+				});	
+			
+
+
+
+
+
+
+
+
+				
+				
+			$('#profile_id').val(localStorage.getItem('userid'));
+			
+			//alert(localStorage.getItem('userid'));
+			////////////////
+			
+			$('body').on('click','.inner-itenanry-box',function(){
+				
+				window.location.href='news_inner.html';
+				
+				})
+			
+			
+			
+			
+	
+  			var posts_complete=$.getJSON('http://himanshuverma.co.in/godrej/about.php', function(data){
+						//	console.log(data);
+						 posts=data;
+					
+					});
+  
+  			posts_complete.complete(function(data) {
+				//console.log(size);
+				$.each(posts,function(){
+					$('.discussion-topic-title p').text(this.title);
+					$('.upload-pic-big').html('<img src="http://himanshuverma.co.in/godrej/uploads/'+this.image+'" />');
+					$('.about-desc-wrp').html(this.description).text();
+				})
+			})
+  
+  
+  
+  		
+  
+			})
+		 </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

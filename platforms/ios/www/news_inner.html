@@ -1,0 +1,251 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <style>
+           body {
+                padding-bottom: 20px;
+            }
+			
+			
+			.login_title span.title-icon{ width:185px !important;}
+			
+			
+			
+			.news_time{ color:#3fabe1; margin-bottom:10px; display:block;}
+			span.back-btn {
+   
+    position: absolute !important;
+    right: 20px !important;
+    top: 0px !important;
+}
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="css/font-awesome.css">
+ <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        
+    </head>
+    <body onLoad="onLoad()">
+        <a id="ham-menu" href="javascript:void(0)"><img width="25" src="img/hamburg-menu_03.png"/></a>
+    
+    <div class="off-canvas-menu-wrp">
+    
+    <a id="ham-menu-close" href="javascript:void(0)">MENU</a>
+    
+<ul class="top-link">
+<li class="drop-link"><a class="" href="profile_edit.html"><i class="fa fa-user"></i>&nbsp;&nbsp;My Profile</a></li>
+<li class="drop-link"><a class="" href="Itinerary.html"><i class="fa fa-map-o"></i>&nbsp;&nbsp;Itinerary</a></li>
+<li class="drop-link"><a class="" href="news.html"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;News and Updates</a></li>
+<li class="drop-link"><a class="" href="discussion_board.html"><i class="fa fa-comment"></i>&nbsp;&nbsp;Discussion Board</a></li>
+<li class="drop-link"><a class="" href="gallery.html"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Gallery</a></li>
+<li  class="drop-link"><a class="" href="things.html"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Things To Do</a></li>
+<li  class="drop-link"><a class="" href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+<li  class="drop-link"><a class="" href="about.html"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a></li>
+<li  class="drop-link"><a class="logout_btn" href="javascript:void(0)"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+<!--<li><a class="contact-home" href="javascript:void(0)">Contact</a></li>-->
+</ul>
+</div>
+
+    <div class="container">
+     
+        
+      <div class="row">
+      	<div class="col-sm-12 col-xs-12 bluehead" >
+        	
+             <div class="login_title"><span class="title-icon news-icon">News & Updates</span><span class="back-btn"><a href="news.html"><img src="img/back-btn_03.png" width="30"/></a></span></div>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+        
+
+            <div class="discussion-main-wrp">
+            
+            <div class="top-pro-pic-wrp">
+          
+            
+           
+            
+            
+           
+            <div class="discussion-topic-title">
+            <p></p>
+            </div>
+           
+            <div class="clearfix"></div>
+            
+            </div>
+            
+            
+            <div class="upload-pic-big">
+            <a class="fancybox">
+            <img src="img/imgd.png"/>
+            </a>
+            </div>
+            
+             <span class="news_time"><i class="fa fa-calendar"></i> </span>
+            
+            <div class="discussion-board-desc-wrp inner-desc-discussion-txt">
+            
+            <p></p>
+            
+            </div>
+            
+           
+            
+            </div>
+        
+                
+        </div> 
+       
+      
+      </div>
+   
+    </div> <!-- /container -->      
+    
+    <!--comment modal--> 
+    	<!-- Modal -->
+
+    
+    <!--comment modal end-->
+       
+<script type="text/javascript" src="cordova.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+       
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+		
+			$(document).ready(function(){
+				
+				
+				$('.logout_btn').click(function(){
+				 logoutCallback();
+				
+				})	
+			
+			function logoutCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmlogoutCallback);
+                    }
+                function confirmlogoutCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                   window.location.href='logout.html'
+                    }
+                else {
+                   
+                    }
+                } 
+				
+				$(".fancybox").fancybox({
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+				if( /iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    $('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'); 
+                                                var div_size = $('.off-canvas-menu-wrp').css('left');                                                 var fields = div_size.split('px');                                                 if ( fields[0] > 0 ) { 
+                                                    val = "0px";
+                                                } else {
+                                                    val = "100%";
+                                                }
+						$navigacia.animate({
+								left: val
+						}, 300);
+		
+				});
+}else{
+				$('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'),
+								val = $navigacia.css('left') === '100%' ? '0px' : '100%';
+						$navigacia.animate({
+								left: val
+						}, 300)
+		
+				});
+				
+    }
+				 var post_id = window.location.hash.substr(1);
+				 load_list()
+				function load_list(){	
+		var posts_complete=$.getJSON('http://himanshuverma.co.in/godrej/news.php?id='+post_id, function(data){
+							
+						 posts=data;
+					
+					});
+  var iti_day='';
+  			posts_complete.complete(function() {
+				
+				$.each(posts,function(){
+				
+					$('.discussion-topic-title p').text(this.title);
+					if(this.image!=''){
+					$('.upload-pic-big a').attr('href','http://himanshuverma.co.in/godrej/uploads/'+this.image);
+					$('.upload-pic-big a img').attr('src','http://himanshuverma.co.in/godrej/uploads/'+this.image);
+					}else{
+					$('.upload-pic-big').remove();	
+					}
+				$('.discussion-board-desc-wrp').html(this.description)
+				$('.news_time').append(this.news_date)
+				})
+				
+				var width=$('.itenat-pic-wrp').width();
+				$('.itenat-pic-wrp').height(width);
+				
+			})
+  
+  
+	}
+  		
+		
+		
+		
+		
+		///////////////////////////////////////
+	
+  
+  
+			})
+		 </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

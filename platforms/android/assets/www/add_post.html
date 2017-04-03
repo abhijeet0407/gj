@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	<div class="col-sm-10 col-xs-10 login_container col-centered" >
+        	<div class="col-sm-12 col-xs-12 col-centered">
+            <img class="login_lock" id="profile_img" src="img/register_icon.jpg" />
+            <div class="login_title">ADD POST</div>
+            <div class="login_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <form id="sign_up">
+                <div class="col-sm-12 col-xs-12 col-centered login_input_wrp">Post Image:  <a href="javascript:void(0)" onclick="getImage();">Upload a Post</a><input type="hidden" id="profile_pic" name="post_image" /></div>
+                <div class="col-sm-12 col-xs-12 col-centered login_input_wrp"><progress style="display:none;" max="100" value="0" id="ft-prog" ></progress></div>
+                <div class="col-sm-12 col-xs-12 col-centered login_input_wrp"><input data-msg-required="Post Title Required" required class="login_input" type="text" placeholder="Post Title*" name="post_title" /></div>
+                  <div class="col-sm-12 col-xs-12 col-centered login_input_wrp"><textarea data-msg-required="Post Description Required" required class="login_input textarea_input" type="text" placeholder="Post Description*" name="post_description" ></textarea></div>
+                  <div class="col-sm-12 col-xs-12 col-centered login_input_wrp"><input type="hidden" name="id" id="profile_id" /><input type="submit" value="Submit" class="signin_btn"   /></div>
+                  
+                </form>
+                <div class="msg col-sm-12 col-xs-12">
+                	  <div class="alert alert-success success" role="alert">Post added successfully.</div>
+                    <div class="alert alert-warning processing" role="alert">Processing your request please wait...</div>
+                    <div class="alert alert-danger failed" role="alert">Post submission failed. Please check internet connection.</div>
+                </div>
+            
+           </div> 
+       </div> 
+      
+      </div>
+      
+		
+      
+    </div> <!-- /container -->       
+       
+		<script type="text/javascript" src="cordova.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+		var statusDom = document.querySelector('#status');
+		 function getImage() {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://himanshuverma.co.in/godrej/upload.php", win, fail, options);
+			document.getElementById("ft-prog").style.display="block";
+			ft.onprogress = function(progressEvent) {
+				
+		    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+			document.getElementById("ft-prog").value = perc;
+				//statusDom.innerHTML = perc + "% loaded...";	
+			}
+			
+        }
+ 			
+        function win(r) {
+        /*    console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);*/
+			document.getElementById("ft-prog").value =100;
+			
+			document.getElementById("profile_pic").value=r.response;
+			document.getElementById("profile_img").src='http://himanshuverma.co.in/godrej/uploads/'+r.response;
+           // alert(r.response);
+        }
+ 
+        function fail(error) {
+            alert("An error has occurred: Code = "+ error.code);
+        }
+		
+		
+		
+		
+		
+			$(document).ready(function(){
+				
+			
+				$('#profile_id').val(localStorage.getItem('userid'));
+				
+			
+				$('.signin_btn').click(function(){
+					$('.failed').hide();
+					$('.processing').hide();
+					$('.success').hide();
+					
+					 $("#sign_up").validate({
+      				  submitHandler:function (form){
+						  	///
+									$('.signin_btn').attr('disabled','disabled');
+									$('.processing').show();
+										var signup_data=$('#sign_up').serialize();
+										$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/add_post.php',
+										  data:signup_data,
+										  success:function(data){
+											  if(data=='1'){
+												  $('.processing').hide();
+												  
+												  $('.login_input').val('');
+												  $('.success').show();
+												  setTimeout(function(){ window.location.href='discussion_board.html' }, 2000);	
+											  }else{
+												  $('.processing').hide();
+												  $('.failed').show();
+												  $('.signin_btn').removeAttr('disabled');
+											  }
+											  
+											  
+											  },
+										  error:function(){
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+											},
+										  fail: function(){
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+										  },
+										  timeout: 40000 
+									  
+									  })
+							
+							
+							
+							
+							////
+						  
+						  
+						  
+                     
+					 	 }
+                      });
+					
+				
+					
+				})
+				
+			})
+		 </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

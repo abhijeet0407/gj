@@ -1,0 +1,461 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <style>
+            body {
+                padding-bottom: 20px;
+            }
+			
+			
+			.login_title span.title-icon{ width:135px !important;}
+			
+			.glyphicon { margin-right:5px;}
+			.section-box h2 { margin-top:0px;}
+			.section-box h2 a { font-size:15px; }
+			.glyphicon-heart { color:#e74c3c;}
+			.glyphicon-comment { color:#27ae60;}
+			.separator { padding-right:5px;padding-left:5px; }
+			.section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
+			.post_title{ font-size:20px;}
+			.comment_validation{ display:none; font-size:12px; color:#f00;}
+			
+			
+
+
+.signin_btn{ background-image:none !important;}
+.profile_edit_icon{ width:50px; height:50px; border-radius:25px;  position:absolute; right:20px; top:20px;}
+.profile_edit_icon img{ width:100%;}
+.pencil{ margin: 0 auto;
+    font-size: 26px !important;
+    padding-left: 14px;
+    padding-top: 12px; color:#40abe1 }			
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="css/font-awesome.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+     
+         <script src="js/jquery.fancybox.js"></script>
+        
+    </head>
+    <body onLoad="onLoad()">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <a id="ham-menu" href="javascript:void(0)"><img width="25" src="img/hamburg-menu_03.png"/></a>
+    
+    <div class="off-canvas-menu-wrp">
+    
+    <a id="ham-menu-close" href="javascript:void(0)">MENU</a>
+    
+<ul class="top-link">
+<li class="drop-link"><a class="" href="profile_edit.html"><i class="fa fa-user"></i>&nbsp;&nbsp;My Profile</a></li>
+<li class="drop-link"><a class="" href="Itinerary.html"><i class="fa fa-map-o"></i>&nbsp;&nbsp;Itinerary</a></li>
+<li class="drop-link"><a class="" href="news.html"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;News and Updates</a></li>
+<li class="drop-link"><a class="" href="discussion_board.html"><i class="fa fa-comment"></i>&nbsp;&nbsp;Discussion Board</a></li>
+<li class="drop-link"><a class="" href="gallery.html"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Gallery</a></li>
+<li  class="drop-link"><a class="" href="things.html"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Things To Do</a></li>
+<li  class="drop-link"><a class="" href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+<li  class="drop-link"><a class="" href="about.html"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a></li>
+<li  class="drop-link"><a class="logout_btn" href="javascript:void(0)"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+<!--<li><a class="contact-home" href="javascript:void(0)">Contact</a></li>-->
+</ul>
+</div>
+    
+    
+    <div class="container">
+    
+      <!-- Example row of columns -->
+   		
+        
+      <div class="row">
+      	<div class="col-sm-12 col-xs-12 bluehead" >
+        	
+            
+        <div class="login_title"><span class="title-icon profile-icn">PROFILE</span></div>
+        </div>
+   <div class="col-sm-12 col-xs-12" >
+        
+        <div class="row">
+        <div class="profile-main-wrp">
+        
+        <div class="top-profile-wrp">
+        
+        <div class="center-line-wrp">
+      
+        &nbsp;
+        </div>
+        
+        <div class="outer-circle-wrp">
+        <a class="fancybox">
+        <div id="profile_img" class="profile-pic-circle">
+        
+        </div>
+        </a>
+        </div>
+        
+        <div class="profile-name-wrp">
+        <p class="name_text"></p>
+        <span>Mumbai</span>
+        </div>
+        
+        
+        <div class="profile-color-band">
+        
+        <div class="color-band bottom-box-blue-1">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-2">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-3">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-4">
+        &nbsp;
+        </div>
+        
+        <div class="clearfix"></div>
+        </div>
+        
+        </div>
+         
+         <form id="sign_up">
+         <div class="profile-form-wrp">
+         
+         <div class="inner-profile-form-wrp">
+         <label>EMPLOYEE ID</label>
+         <input type="text" name="emp_id" readonly />
+         <progress style="display:none;" max="100" value="0" id="ft-prog" ></progress>
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>Name</label>
+         <input data-msg-required="Name Required" required type="text" name="name" readonly  />
+         </div>
+         
+         <div class="inner-profile-form-wrp">
+         <label>gender</label>
+         <label class="label_gender"></label>
+         </div>
+         
+         
+         <div class="inner-profile-form-wrp">
+         <label>date of birth</label>
+         <input type="text" name="dob" data-msg-required="Date of birth Required" readonly required/>
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>e-mail</label>
+         <input type="text" name="email" readonly />
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>Location</label>
+         <input type="text" name="designation" data-msg-required="Designation Required" readonly required/>
+         </div>
+         
+         <div class="inner-profile-form-wrp" style="border-bottom:none;"> 
+              
+        
+         </div>
+         
+         
+         
+         <div class="clearfix"></div>
+         <div class="msg col-sm-12 col-xs-12">
+                	  <div class="alert alert-success success" role="alert">Profile updated successfully.</div>
+                    <div class="alert alert-warning processing" role="alert">Processing your request please wait...</div>
+                    <div class="alert alert-danger failed" role="alert">Profile Updation failed. Please check internet connection.</div>
+                </div>
+         </div>
+         </form>
+         <div class="clearfix"></div>
+         </div>      
+        </div> 
+        </div>
+       
+      
+      </div>
+   
+    </div> <!-- /container -->      
+    
+
+       
+<script type="text/javascript" src="cordova.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+        
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+	
+		/////////
+				
+					var statusDom = document.querySelector('#status');
+		 function getImage() {
+			
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+			
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://himanshuverma.co.in/godrej/upload.php", win, fail, options);
+			//document.getElementById("ft-prog").style.display="block";
+			ft.onprogress = function(progressEvent) {
+				
+		    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+			document.getElementById("ft-prog").value = perc;
+				//statusDom.innerHTML = perc + "% loaded...";	
+			}
+			
+        }
+ 			
+        function win(r) {
+        /*    console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);*/
+			document.getElementById("ft-prog").value =100;
+			
+			document.getElementById("profile_pic").value=r.response;
+			localStorage.profile_pic=r.response;
+			document.getElementById("profile_img").style.backgroundImage='url(http://himanshuverma.co.in/godrej/uploads/thumb/'+r.response+')';
+           // alert(r.response);
+        }
+ 
+        function fail(error) {
+            alert("An error has occurred: Code = "+ error.code);
+        }
+				
+				
+				////////
+		
+		
+		
+		
+			$(document).ready(function(){
+				
+				
+				/////
+					
+				$('.logout_btn').click(function(){
+				 logoutCallback();
+				
+				})	
+			
+			function logoutCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmlogoutCallback);
+                    }
+                function confirmlogoutCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                   window.location.href='logout.html'
+                    }
+                else {
+                   
+                    }
+                } 
+				
+				////
+				
+				
+				$(".fancybox").fancybox({
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+				if( /iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    $('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'); 
+                                                var div_size = $('.off-canvas-menu-wrp').css('left');                                                 var fields = div_size.split('px');                                                 if ( fields[0] > 0 ) { 
+                                                    val = "0px";
+                                                } else {
+                                                    val = "100%";
+                                                }
+						$navigacia.animate({
+								left: val
+						}, 300);
+		
+				});
+}else{
+				$('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'),
+								val = $navigacia.css('left') === '100%' ? '0px' : '100%';
+						$navigacia.animate({
+								left: val
+						}, 300)
+		
+				});
+                            }
+				var posts='';
+				var post_id = window.location.hash.substr(1);
+  			var posts_complete=$.getJSON('http://himanshuverma.co.in/godrej/profile.php?id='+post_id, function(data){
+						//	console.log(data);
+						 posts=data;
+					console.log(data);
+					});
+  
+  			
+				posts_complete.complete(function(data) {
+				//console.log(size);
+				
+				$.each(posts,function(){
+				
+				$('.name_text').text(this.name);	
+				$('input[name="name"]').val(this.name)
+				
+				
+				$('input[name="emp_id"]').val(this.empid);
+					$('input[name="email"]').val(this.email);
+				$('.label_gender').text(this.gender);
+				$('input[name="dob"]').val(this.dob);
+				$('input[name="designation"]').val(this.designation);
+				$('.fancybox').attr('href','http://himanshuverma.co.in/godrej/uploads/'+this.profile_pic);
+				document.getElementById("profile_img").style.backgroundImage='url(http://himanshuverma.co.in/godrej/uploads/thumb/'+this.profile_pic+')';
+				
+				})
+			})
+				
+				
+				
+				
+				
+			
+			
+				$('.signin_btn').click(function(){
+					$('.failed').hide();
+					$('.processing').hide();
+					$('.success').hide();
+					
+					 $("#sign_up").validate({
+      				  submitHandler:function (form){
+						  	///
+									$('.signin_btn').attr('disabled','disabled');
+									$('.processing').show();
+										var signup_data=$('#sign_up').serialize();
+										
+										$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/profile_update.php',
+										  data:signup_data,
+										  success:function(data){
+											  if(data=='1'){
+												  $('.processing').hide();
+												  
+												  $('.login_input').val('');
+												  $('.success').show();
+												//  setTimeout(function(){ window.location.href='welcome.html' }, 2000);	
+											  }else if(data=='2'){
+												  $('.processing').hide();
+												  $('.already_account_alert').show();
+												  //setTimeout(function(){ window.location.href='login.html' }, 2000);
+												  $('.signin_btn').removeAttr('disabled');	
+											  }else{
+												  $('.processing').hide();
+												  $('.failed').show();
+												  $('.signin_btn').removeAttr('disabled');
+											  }
+											  
+											  
+											  },
+										  error:function(){
+											
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+											},
+										  fail: function(){
+											 
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+										  },
+										  timeout: 40000 
+									  
+									  })
+							
+							
+							
+							
+							////
+						  
+						  
+						  
+                     
+					 	 }
+                      });
+					
+				
+					
+				})
+				
+			})
+		 </script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

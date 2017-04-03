@@ -1,0 +1,585 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <style>
+           body {
+                padding-bottom: 20px;
+            }
+			
+			
+			.login_title span.title-icon{ width:255px !important;}
+			
+			
+			
+			.news_time{ color:#3fabe1; margin-bottom:10px; display:block;}
+			span.back-btn {
+   
+    position: absolute !important;
+    right: 20px !important;
+    top: 0px !important;
+}
+.inner-desc-discussion-txt p {
+    font-size: 14px;
+	color:#333;
+	line-height:20px;
+}
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="css/font-awesome.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/ionic.min.js"></script>
+        <script src="js/ionic-angular.min.js"></script>
+        
+    </head>
+    <body onLoad="onLoad()">
+        <a id="ham-menu" href="javascript:void(0)"><img width="25" src="img/hamburg-menu_03.png"/></a>
+    
+    <div class="off-canvas-menu-wrp">
+    
+    <a id="ham-menu-close" href="javascript:void(0)">MENU</a>
+    
+<ul class="top-link">
+<li class="drop-link"><a class="" href="profile_edit.html"><i class="fa fa-user"></i>&nbsp;&nbsp;My Profile</a></li>
+<li class="drop-link"><a class="" href="Itinerary.html"><i class="fa fa-map-o"></i>&nbsp;&nbsp;Itinerary</a></li>
+<li class="drop-link"><a class="" href="news.html"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;News and Updates</a></li>
+<li class="drop-link"><a class="" href="discussion_board.html"><i class="fa fa-comment"></i>&nbsp;&nbsp;Discussion Board</a></li>
+<li class="drop-link"><a class="" href="gallery.html"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Gallery</a></li>
+<li  class="drop-link"><a class="" href="things.html"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Things To Do</a></li>
+<li  class="drop-link"><a class="" href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+<li  class="drop-link"><a class="" href="about.html"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a></li>
+<li  class="drop-link"><a class="logout_btn" href="javascript:void(0)"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+<!--<li><a class="contact-home" href="javascript:void(0)">Contact</a></li>-->
+</ul>
+</div>
+
+    <div class="container">
+     
+        
+      <div class="row">
+      	<div class="col-sm-12 col-xs-12 bluehead" >
+        	
+             <div class="login_title"><span class="title-icon">Terms and Conditons</span><span class="back-btn"><a href="signup.html"><img src="img/back-btn_03.png" width="30"/></a></span></div>
+        </div>
+        <div class="col-sm-12 col-xs-12" >
+
+            <div class="discussion-main-wrp">
+            
+            <div class="top-pro-pic-wrp">
+          
+            
+           
+            
+            
+           
+            <div class="discussion-topic-title">
+            <p align="center" style=" line-height:26px;">END USER LICENSE AGREEMENT IMPORTANT: PLEASE READ THIS LICENSE CAREFULLY BEFORE USING THIS MOBILE APP.</p>
+            </div>
+           
+            <div class="clearfix"></div>
+            
+            </div>
+            
+            
+            
+            <div class="discussion-board-desc-wrp inner-desc-discussion-txt">
+            
+            <p align="justify" style="line-height:18px; padding-bottom:20px;">The Godrej LSS application (&quot;Mobile App&quot;) is owned and operated by Godrej. By installing and/or using the Mobile App, you (&ldquo;User&rdquo;) agree that this End User License Agreement (&ldquo;EULA&rdquo; or &ldquo;Agreement&rdquo;) is a legally binding and valid contract and agree to be bound by it. You agree to abide by the intellectual property laws and all of the terms and conditions of this Agreement.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;">Godrej reserves the right, at its sole discretion, to modify or replace any of the terms or conditions of this Agreement at any time. It is User&rsquo;s responsibility to check this Agreement periodically for changes. User&rsquo;s continued use of the Mobile App following the posting of any changes to this Agreement constitutes acceptance of those changes. This Agreement is void where prohibited by law, and the right to access and use the Mobile App is revoked in such jurisdictions.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;"><strong>1. LICENSE</strong><br />
+Subject to the terms of this Agreement, Godrej grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to use Mobile App in accordance with this Agreement and any other written agreement with Godrej. Godrej does not transfer the title of Mobile App to you; the license granted to you is not a sale. This agreement is a binding legal agreement between Godrej and the purchasers or users of Mobile App.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;">If you do not agree to be bound by this agreement, remove Mobile App from your device.<br />
+  <strong><br />
+  2. CONSENT OF USE OF DATA</strong><br />
+  You agree that Godrej may collect and use information gathered in any manner as part of the product support services provided to you related to Mobile App, including, but not limited to, GPS data regarding your location when inside Godrej Police Department&rsquo;s patrol jurisdiction. Godrej may also use this information to provide notices to you which may be of use or interest to you.<br />
+  <br />
+  <strong>3. DISTRIBUTION</strong><br />
+  Mobile App and the license herein granted shall not be copied, shared, distributed, re-sold, offered for re-sale, transferred or sub-licensed in whole or in part except that you may make one copy for archive purposes only.<br />
+  <br />
+  <strong>4. USE</strong><br />
+  Your license to use Mobile App is limited to the number of licenses purchased by you. You shall not allow others to use, copy or evaluate copies of Mobile App.<br />
+  <br />
+  <strong>5. Use Restrictions</strong><br />
+  You shall use Mobile App in compliance with all applicable laws and not for any unlawful purpose.<br />
+  <br />
+  <strong>6. Copyright Restriction</strong><br />
+  This Mobile App contains copyrighted material, trade secrets and other proprietary material. You shall not, and shall not attempt to, modify, reverse engineer, disassemble or decompile Mobile App. Nor can you create any derivative works or other works that are based upon or derived from Mobile App in whole or in part.<br />
+  Godrej's name, logo and graphics file that represents Mobile App shall not be used in any way to promote products developed with Mobile App. Godrej retains sole and exclusive ownership of all right, title and interest in and to Mobile App and all Intellectual Property rights relating thereto.<br />
+  <br />
+  Copyright law and international copyright treaty provisions protect all parts of Mobile App, products and services. No program, code, part, image, audio sample, or text may be copied or used in any way by the User except as intended within the bounds of the single user program. All rights not expressly granted hereunder are reserved for Godrej.<br />
+  <strong><br />
+  7. WAIVER OF LIABILITY AND HOLD HARMLESS AGREEMENT</strong><br />
+  In consideration for receiving permission to download and use Mobile App, I hereby release, waive, discharge and covenant not to sue Godrej, its officers, servants, agents and employees (hereinafter referred to as &quot;releases&quot;) from any and all liability, claims, demands, actions and causes of action whatsoever arising out of or relating to any loss, damage or injury, including death, that may be sustained by me, or to any property belonging to me, whether caused by the negligence of the releases, or otherwise, related in any way to my use or possession of Mobile App.<br />
+  I am fully aware of risks and hazards connected with travel on the Godrej campus and the areas adjacent to campus within Godrej Police Department&rsquo;s patrol jurisdiction, and I am fully aware that there may be risks and hazards unknown to me connected with such travel. I acknowledge and understand that Mobile App does not purport to reduce or ameliorate any such risks, and that I may become lost or injured in the course of using information presented by Mobile App. I hereby elect to voluntarily download and use Mobile App knowing that conditions may be hazardous, or may become hazardous or dangerous to me and my property. I voluntarily assume full responsibility for any risks of loss, property damage or personal injury, including death, that may be sustained by me, or any loss or damage to property owned by me, as a result of my use or possession of Mobile App, whether caused by the negligence of releasees or otherwise.<br />
+  <br />
+  I further hereby agree to indemnify, hold harmless and defend the releasees and each of them, from any loss, liability, damage or costs they may incur due to my use or possession of Mobile App, whether caused by the negligence of any or all of the releasees, or otherwise.<br />
+  <br />
+  In no event (including, without limitation, in the event of negligence) will Godrej, its trustees, officers, agents, vendors or employees be liable for any consequential, incidental, indirect, special or punitive damages whatsoever (including, without limitation, damages for loss of profits, loss of use, business interruption, loss of information or data, or pecuniary loss), in connection with or arising out of or related to the use or inability to use Mobile App or the furnishing, performance or use of any other matters hereunder whether based upon contract, tort or any other theory including negligence.<br />
+  <br />
+  <br />
+  <strong>8. NO WARRANTY</strong><br />
+  GODREJ PROVIDES MOBILE APP TO YOU &quot;AS IS&quot;, WITH ALL FAULTS, AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, STATUTORY, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON- INFRINGEMENT. GODREJ MAKES NO REPRESENTATION OR WARRANTY THAT THE MOBILE APP OR INFORMATION PRESENTED THEREBY IS ACCURATE, COMPLETE OR UP-TO-DATE. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY ANY GODREJ EMPLOYEE, REPRESENTATIVE OR DISTRIBUTOR SHALL CREATE A WARRANTY FOR THE MOBILE APP.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;">GODREJ MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO ANY EMERGENCY SERVICES PROVIDERS (POLICE, PARAMEDICS, ETC.) OR THE STABILITY, CONNECTIVITY, OR EFFECTIVENESS OF ANY WIRELESS OR CELLULAR NETWORK DURING ANY EMERGENCY SITUATION. THE FOREGOING DISCLAIMER SHALL NOT APPLY TO THE EXTENT PROHIBITED BY APPLICABLE LAW.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;"><strong>9. FORCE MAJEURE</strong><br />
+  Godrej, its officers, servants, agents and employees will not be liable or deemed to be in default for any delay or failure in performance or interruption of the delivery of Mobile App resulting directly or indirectly from any cause or circumstance beyond its or their reasonable control, including but not limited to failure of electronic or mechanical equipment or communication lines, telephone or other interconnect problems, computer viruses, unauthorized access, theft, operator errors, severe weather, earthquakes or natural disasters, strikes or other labor problems, wars, or governmental restrictions.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;"><strong>10. TERMINATION</strong><br />
+Godrej may terminate User&rsquo;s access to the Mobile App at any time, with or without cause. User will be provided with termination notice by account notification and SMS message(s). Godrej may in its discretion also provide other (additional) forms of termination notice. Upon termination, User will no longer access (or attempt to access) the Mobile App. All provisions of this Agreement which by their nature should survive termination shall survive termination, including, without limitation, warranty disclaimers and limitations of liability.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;">
+  <strong>11. PRIVACY</strong><br />
+By using the Mobile App, you are consenting to all terms contained in Mobile App&rsquo;s&nbsp;Privacy Policy, which is incorporated by reference herein, now and as amended by Godrej.</p>
+<p align="justify" style="line-height:18px; padding-bottom:20px;"><strong>12. MISCELLANEOUS</strong><br />
+  The failure of either party to exercise in any respect any right provided for herein shall not be deemed a waiver of any further rights hereunder. This Agreement is not assignable, transferable or sub-licensable by User except with Godrej&rsquo;s prior written consent. Godrej may transfer, assign or delegate this Agreement and its rights and obligations without consent. Both parties agree that this Agreement is the complete and exclusive statement of the mutual understanding of the parties and supersedes and cancels all previous written and oral agreements, communications and other understandings relating to the subject matter of this Agreement. No agency, partnership, joint venture, or employment is created as a result of this Agreement and User does not have any authority of any kind to bind Godrej in any respect whatsoever.</p>
+            
+            </div>
+            
+           
+            
+            </div>
+        
+                
+        </div> 
+       
+      
+      </div>
+   
+    </div> <!-- /container -->      
+    
+    <!--comment modal--> 
+    	<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Comments</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="new_comment form-control"  />
+        <span class="comment_validation">Please enter comment to submit</span>
+      	 <input type="button" class="btn btn-xs btn-danger comment_submit_btn" onKeyUp="keyupFunction()" /> 
+         <ul class="comments_list_ul">
+         </ul>
+        
+      </div>
+      </div>
+
+  </div>
+</div>
+    
+    <!--comment modal end-->
+       
+<script type="text/javascript" src="cordova.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+         <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+		var statusDom = document.querySelector('#status');
+		 function getImage() {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://himanshuverma.co.in/godrej/upload.php", win, fail, options);
+			document.getElementById("ft-prog").style.display="block";
+			ft.onprogress = function(progressEvent) {
+				
+		    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+			document.getElementById("ft-prog").value = perc;
+				//statusDom.innerHTML = perc + "% loaded...";	
+			}
+			
+        }
+ 			
+        function win(r) {
+        /*    console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);*/
+			document.getElementById("ft-prog").value =100;
+			
+			document.getElementById("profile_pic").value=r.response;
+			//document.getElementById("profile_img").src='http://himanshuverma.co.in/godrej/uploads/'+r.response;
+           // alert(r.response);
+        }
+ 
+        function fail(error) {
+            alert("An error has occurred: Code = "+ error.code);
+        }
+		</script>
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+		
+			$(document).ready(function(){
+				if( /iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    $('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'); 
+                                                var div_size = $('.off-canvas-menu-wrp').css('left');                                                 var fields = div_size.split('px');                                                 if ( fields[0] > 0 ) { 
+                                                    val = "0px";
+                                                } else {
+                                                    val = "100%";
+                                                }
+						$navigacia.animate({
+								left: val
+						}, 300);
+		
+				});
+}else{
+				
+				$('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'),
+								val = $navigacia.css('left') === '100%' ? '0px' : '100%';
+						$navigacia.animate({
+								left: val
+						}, 300)
+		
+				});
+                            }
+			$('#profile_id').val(localStorage.getItem('userid'));
+			
+			//alert(localStorage.getItem('userid'));
+			////////////////
+			
+			$('.signin_btn').click(function(){
+					$('.failed').hide();
+					$('.processing').hide();
+					$('.success').hide();
+					
+					 $("#sign_up").validate({
+      				  submitHandler:function (form){
+						  	///
+									$('.signin_btn').attr('disabled','disabled');
+									$('.processing').show();
+										var signup_data=$('#sign_up').serialize();
+										$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/add_post.php',
+										  data:signup_data,
+										  success:function(data){
+											  if(data=='1'){
+												  $('.processing').hide();
+												  
+												  $('.login_input').val('');
+												  $('.success').show();
+												  setTimeout(function(){ window.location.href='discussion_board.html' }, 2000);	
+											  }else{
+												  $('.processing').hide();
+												  $('.failed').show();
+												  $('.signin_btn').removeAttr('disabled');
+											  }
+											  
+											  
+											  },
+										  error:function(){
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+											},
+										  fail: function(){
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+										  },
+										  timeout: 40000 
+									  
+									  })
+							
+							
+							
+							
+							////
+						  
+						  
+						  
+                     
+					 	 }
+                      });
+					
+				
+					
+				})
+				
+			
+			
+			///////////
+				//setTimeout(function(){ window.location.href='login.html' }, 2000);	
+	/*			$.getJSON( "ajax/test.json", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });*/
+  
+  
+  			var posts_complete=$.getJSON('http://himanshuverma.co.in/godrej/discussion_board_json.php?userid='+localStorage.getItem('userid'), function(data){
+						//	console.log(data);
+						 posts=data;
+					console.log(posts)
+					});
+  
+  			posts_complete.complete(function(data) {
+				//console.log(size);
+				$.each(posts,function(){
+					$('#posts').append(' <div class="col-xs-12 col-sm-12">'
+            +'<div class="well well-sm">'
+               +'<div class="row">'
+                    +'<div class="col-xs-4 col-md-4 text-center">'
+                        +'<img src="http://www.himanshuverma.co.in/godrej/uploads/'+this.post_image+'" alt="bootsnipp"'
+                            +'class="img-rounded img-responsive" />'
+                    +'</div>'
+                    +'<div class="col-xs-8 col-md-8 section-box">'
+                       + '<div class="post_title">'+this.title+''
+                        +'</div>'
+                        +'<p class="post_description">'+this.description+'</p>'
+                       + '<hr />'
+                        +'<div class="row rating-desc">'
+                            +'<div class="col-md-12">'
+                               + '<a href="javascript:void(0)" class="like-btn" rel="'+this.postid+'" target="_blank"><span class="glyphicon glyphicon-heart like-count"></span>'+this.likes_count+'</a><span class="separator">|</span>'
+                               + '<a href="javascript:void(0)" class="comment-btn" rel="'+this.postid+'"  target="_blank"><span class="glyphicon glyphicon-comment"></span><span class="comment_count">('+this.comments_count+')</span></a>'
+                            +'</div>'
+                       + '</div>'
+                    +'</div>'
+               + '</div>'
+            +'</div>'
+       + '</div>')
+					
+					})
+			})
+  
+  
+  
+  		$('body').on('click','.like-btn',function(){
+		$(this)	.unbind('click');
+		var status='like';
+		var postid=$(this)	.attr('rel');
+		var userid=	localStorage.getItem('userid');
+		var prev_count_no=parseInt($(this).text());
+		var count_no=parseInt($(this).text());
+		if($(this).hasClass('glyphicon-heart')){
+		$(this).removeClass('glyphicon-heart');
+		$(this).addClass('glyphicon-heart-empty');
+		status='unlike';
+			if(count_no>0){
+				count_no=count_no-1;	
+				$(this).text(count_no);
+				
+			}
+		}else{
+			$(this).removeClass('glyphicon-heart-empty');
+			$(this).addClass('glyphicon-heart');
+			count_no=count_no+1;	
+			$(this).text(count_no);
+			$(this).bind('click');
+		}
+		
+		
+		//
+			
+			$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/like_process.php',
+										  data:'postid='+postid+'&userid='+userid+'&status='+status,
+										  success:function(data){
+											  $('a.like-btn[rel="'+postid+'"]').bind('click');
+											  
+											  
+											  },
+										  error:function(){
+											
+											$('a.like-btn[rel="'+postid+'"]').bind('click');
+											},
+										  fail: function(){
+											$('a.like-btn[rel="'+postid+'"]').bind('click');
+											
+										  },
+										  timeout: 40000 
+									  
+									  })
+			
+			
+			//
+		
+		
+			
+		})	
+		
+		
+		///
+		
+		$('body').on('click','.comment-btn',function(){
+			$('a.comment-btn[rel="'+postid+'"]').unbind('click');
+			var postid=$(this).attr('rel');
+			$('.comment_submit_btn').attr('rel',postid);
+			
+									$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/comment_show.php',
+										  data:'postid='+postid,
+										  success:function(data){
+											  $('a.comment-btn[rel="'+postid+'"]').bind('click');
+											  
+											  
+											  },
+										  error:function(){
+											
+											$('a.comment-btn[rel="'+postid+'"]').bind('click');
+											},
+										  fail: function(){
+											$('a.comment-btn[rel="'+postid+'"]').bind('click');
+											
+										  },
+										  timeout: 40000 
+									  
+									  })
+				
+			
+		})
+		
+		
+		
+		///
+		
+		
+		
+		$('body').on('click','.comment_submit_btn',function(){
+			var postid=$(this).attr('rel');
+			if($('.new_comment').val()==''){
+					$('.comment_validation').show();
+			}else{
+				$('.comment_validation').hide();
+				
+				var comment_text=$('.new_comment').val();
+				
+				/////////
+				
+				
+					$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/insert_comment.php',
+										  data:'postid='+postid+'&userid='+userid+'&comment='+comment_text,
+										  success:function(data){
+											  $('a.comment-btn[rel="'+postid+'"]').bind('click');
+											  $('.new_comment').val();
+											  
+											  },
+										  error:function(){
+											
+											$('a.comment-btn[rel="'+postid+'"]').bind('click');
+											},
+										  fail: function(){
+											$('a.comment-btn[rel="'+postid+'"]').bind('click');
+											
+										  },
+										  timeout: 40000 
+									  
+									  })
+				
+				
+				
+				///////
+				
+				
+			}
+			
+		})
+		
+		function keyupFunction(){
+			if($('.new_comment').val()==''){
+					$('.comment_validation').show();
+			}else{
+				$('.comment_validation').hide();
+			}
+			
+		}
+		
+  
+  
+			})
+		 </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

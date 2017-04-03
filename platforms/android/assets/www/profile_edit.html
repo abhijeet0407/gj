@@ -1,0 +1,581 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <style>
+            body {
+                padding-bottom: 20px;
+            }
+			
+			
+			.login_title span.title-icon{ width:135px !important;}
+			
+			.glyphicon { margin-right:5px;}
+			.section-box h2 { margin-top:0px;}
+			.section-box h2 a { font-size:15px; }
+			.glyphicon-heart { color:#e74c3c;}
+			.glyphicon-comment { color:#27ae60;}
+			.separator { padding-right:5px;padding-left:5px; }
+			.section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
+			.post_title{ font-size:20px;}
+			.comment_validation{ display:none; font-size:12px; color:#f00;}
+			
+			
+
+
+.signin_btn{ background-image:none !important;}
+.profile_edit_icon{ width:50px; height:50px; border-radius:25px;  position:absolute; right:20px; top:60px;}
+.profile_edit_icon img{ width:100%;}
+.pencil{ margin: 0 auto;
+    font-size: 26px !important;
+    padding-left: 14px;
+    padding-top: 12px; color:#40abe1 }	
+	.edit_text{ 
+	color:#fff; 
+	font-size:10px;     
+	position: absolute;
+    bottom: -14px;
+    left: 16px;
+    }		
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="css/font-awesome.css">
+         <link rel="stylesheet" href="css/jqueryui.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+       
+        <script src="js/jquery-ui.min.js"></script>
+        
+        
+    </head>
+    <body onLoad="onLoad()">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <a id="ham-menu" href="javascript:void(0)"><img width="25" src="img/hamburg-menu_03.png"/></a>
+    
+    <div class="off-canvas-menu-wrp">
+    
+    <a id="ham-menu-close" href="javascript:void(0)">MENU</a>
+    
+<ul class="top-link">
+<li class="drop-link"><a class="" href="profile_edit.html"><i class="fa fa-user"></i>&nbsp;&nbsp;My Profile</a></li>
+<li class="drop-link"><a class="" href="Itinerary.html"><i class="fa fa-map-o"></i>&nbsp;&nbsp;Itinerary</a></li>
+<li class="drop-link"><a class="" href="news.html"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;News and Updates</a></li>
+<li class="drop-link"><a class="" href="discussion_board.html"><i class="fa fa-comment"></i>&nbsp;&nbsp;Discussion Board</a></li>
+<li class="drop-link"><a class="" href="gallery.html"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Gallery</a></li>
+<li  class="drop-link"><a class="" href="things.html"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Things To Do</a></li>
+<li  class="drop-link"><a class="" href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+<li  class="drop-link"><a class="" href="about.html"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a></li>
+<li  class="drop-link"><a class="logout_btn" href="javascript:void(0)"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+<!--<li><a class="contact-home" href="javascript:void(0)">Contact</a></li>-->
+</ul>
+</div>
+    
+    
+    <div class="container">
+    
+      <!-- Example row of columns -->
+   		
+        
+      <div class="row">
+      	<div class="col-sm-12 col-xs-12 bluehead" >
+        	
+            
+        <div class="login_title"><span class="title-icon profile-icn">PROFILE</span></div>
+   </div>
+        <div class="col-sm-12 col-xs-12" >
+        <div class="row">
+        <div class="profile-main-wrp">
+        
+        <div class="top-profile-wrp">
+        
+        <div class="center-line-wrp">
+        	<div class="profile_edit_icon" onclick="getImage();"><img src="img/profile-deit-icon_03.png" /><span class="edit_text">Edit</span></div>
+        &nbsp;
+        </div>
+        
+        <div class="outer-circle-wrp">
+        <div id="profile_img" class="profile-pic-circle">
+        
+        </div>
+        
+        </div>
+        
+        <div class="profile-name-wrp">
+        <p class="name_text"></p>
+        <span>Mumbai</span>
+        </div>
+        
+        
+        <div class="profile-color-band">
+        
+        <div class="color-band bottom-box-blue-1">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-2">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-3">
+        &nbsp;
+        </div>
+        
+        <div class="color-band bottom-box-blue-4">
+        &nbsp;
+        </div>
+        
+        <div class="clearfix"></div>
+        </div>
+        
+        </div>
+         
+         <form id="sign_up">
+         <div class="profile-form-wrp">
+         
+         <div class="inner-profile-form-wrp">
+         <label>EMPLOYEE ID</label>
+         <input type="text" name="emp_id" readonly />
+         <progress style="display:none;" max="100" value="0" id="ft-prog" ></progress>
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>Name</label>
+         <input data-msg-required="Name Required" required type="text" name="name"  />
+         </div>
+         
+         <div class="inner-profile-form-wrp">
+         <label>Gender <sup>*</sup></label>
+         <select class="form-control" name="gender" required data-msg-required="Gender Required"><option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option></select>
+         </div>
+         
+         
+         <div class="inner-profile-form-wrp">
+         <label>Date of Birth <sup>*</sup></label>
+         <input type="text" name="dob" id="datepicker" placeholder="DD/MM/YYYY" data-msg-required="Date of birth Required" required/>
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>e-mail</label>
+         <input type="text" name="email" readonly />
+         </div>
+         
+          <div class="inner-profile-form-wrp">
+         <label>location <sup>*</sup></label>
+         <select  name="designation" class="form-control" data-msg-required="Location Required" required>
+         <option value="">Select Location</option>
+         <option value="Ahmedabad">Ahmedabad</option>
+         <option value="Bangalore">Bangalore</option>
+         <option value="Bhopal">Bhopal</option>
+         <option value="Bhubaneshwar">Bhubaneshwar</option>
+         <option value="Chandigarh">Chandigarh</option>
+         <option value="Chennai">Chennai</option>
+         <option value="Coimbatore">Coimbatore</option>
+         <option value="Delhi">Delhi</option>
+          <option value="Guwahati">Guwahati</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Kochi">Kochi</option>
+           <option value="Kolkata">Kolkata</option>
+           <option value="Lucknow">Lucknow</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Patna">Patna</option>
+         <option value="Pune">Pune</option>
+         <option value="Raipur">Raipur</option>
+         <option value="Ranchi">Ranchi</option>
+         </select>
+         </div>
+         
+         <div class="inner-profile-form-wrp" style="border-bottom:none;"> 
+         <input type="hidden" id="profile_id" name="id" />
+         <input type="hidden" id="profile_pic" name="profile_pic" />       
+         <input type="submit" value="submit" class="signin_btn"/>
+         </div>
+         
+         
+         
+         <div class="clearfix"></div>
+         <div class="msg col-sm-12 col-xs-12">
+                	  <div class="alert alert-success success" role="alert">Profile updated successfully.</div>
+                    <div class="alert alert-warning processing" role="alert">Processing your request please wait...</div>
+                    <div class="alert alert-danger failed" role="alert">Profile Updation failed. Please check internet connection.</div>
+                </div>
+         </div>
+         </form>
+         <div class="clearfix"></div>
+         </div>      
+        </div> 
+        </div>
+       
+      
+      </div>
+   
+    </div> <!-- /container -->      
+    
+
+       
+<script type="text/javascript" src="cordova.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+		 /////////////////////////////////////////////////////////////
+
+					 function onLoad() {
+
+						document.addEventListener("deviceready", onDeviceReady, false);
+
+					   
+
+					}
+
+	
+
+	
+
+					function onDeviceReady() {
+
+						// Register the event listener
+
+						document.addEventListener("backbutton", exitCallback, false);
+
+					}
+
+  
+
+  
+
+						function exitCallback() {
+
+					
+
+                    		navigator.notification.confirm('Do you want to exit?',confirmexitCallback);
+
+                     }
+
+                
+
+				
+
+				function confirmexitCallback(buttonIndex) {
+
+						if(buttonIndex == 1) {
+
+					   navigator.app.exitApp(); 
+
+						}
+
+						else {
+
+						   
+
+						}
+
+                } 
+
+  /////////////////////////////////////////////////////////////
+		
+		
+		</script>
+
+        <script type="text/javascript">
+	//////////////////
+	function deviceReady() {
+                    document.addEventListener('backbutton', backButtonCallback, true);
+                }
+
+                function backButtonCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmCallback);
+                    }
+                function confirmCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                    navigator.app.exitApp();
+                    return true;
+                    }
+                else {
+                    return false;
+                    }
+                } 
+
+	
+	////////////////
+	
+	
+		
+			/////////
+				
+					var statusDom = document.querySelector('#status');
+		 function getImage() {
+			
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			//alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+			
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://himanshuverma.co.in/godrej/upload.php", win, fail, options);
+			//document.getElementById("ft-prog").style.display="block";
+			ft.onprogress = function(progressEvent) {
+				document.getElementById("profile_img").style.backgroundImage='none';
+		    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+			//document.getElementById("ft-prog").value = perc;
+				//statusDom.innerHTML = perc + "% loaded...";	
+				//$("#profile_pic").css('background-image','none');
+				//$("#profile_pic").text(perc+'% uploaded');
+				document.getElementById("profile_img").style.paddingTop = "50px";
+				document.getElementById("profile_img").innerHTML=perc + "% uploaded...";	
+			}
+			
+        }
+ 			
+        function win(r) {
+        /*    console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);*/
+			//$("#profile_pic").text('')
+			
+			document.getElementById("profile_pic").value=r.response;
+			document.getElementById("profile_img").innerHTML="";	
+			document.getElementById("profile_img").style.paddingTop = "0px";
+			localStorage.profile_pic=r.response;
+			document.getElementById("profile_img").style.backgroundImage='url(http://himanshuverma.co.in/godrej/uploads/thumb/'+r.response+')';
+           // alert(r.response);
+        }
+ 
+        function fail(error) {
+           // alert("An error has occurred: Code = "+ error.code);
+        }
+				
+				
+				////////
+				
+		
+		
+			$(document).ready(function(){
+				
+				
+				/////
+					
+				$('.logout_btn').click(function(){
+				 logoutCallback();
+				
+				})	
+			
+			function logoutCallback() {
+					
+                    navigator.notification.confirm('Do you want to logout?',confirmlogoutCallback);
+                    }
+                function confirmlogoutCallback(buttonIndex) {
+                    if(buttonIndex == 1) {
+                   window.location.href='logout.html'
+                    }
+                else {
+                   
+                    }
+                } 
+				
+				////
+				
+				
+				 $( "#datepicker" ).datepicker({ yearRange: '1910:2016',changeMonth: true,
+      changeYear: true,dateFormat:'dd-mm-yy'});
+				
+				
+				if( /iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    $('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'); 
+                                                var div_size = $('.off-canvas-menu-wrp').css('left');                                                 var fields = div_size.split('px');                                                 if ( fields[0] > 0 ) { 
+                                                    val = "0px";
+                                                } else {
+                                                    val = "100%";
+                                                }
+						$navigacia.animate({
+								left: val
+						}, 300);
+		
+				});
+}else{
+				$('a#ham-menu, a#ham-menu-close').click(function () {
+						var $navigacia = $('body, .off-canvas-menu-wrp,.fixed'),
+								val = $navigacia.css('left') === '100%' ? '0px' : '100%';
+						$navigacia.animate({
+								left: val
+						}, 300)
+		
+				});
+                            }
+					$('#profile_id').val(localStorage.getItem('userid'));
+				if(localStorage.getItem('name')!=null){
+					$('input[name="name"]').val(localStorage.getItem('name'));
+					$('.name_text').text(localStorage.getItem('name'));
+				}
+				
+				if(localStorage.getItem('email')!=null){
+					$('input[name="email"]').val(localStorage.getItem('email'));
+				}
+				
+				if(localStorage.getItem('dob')!=null){
+					$('input[name="dob"]').val(localStorage.getItem('dob'));
+				}
+				
+				if(localStorage.getItem('designation')!=null){
+					//alert(localStorage.getItem('designation'));
+					$('select[name="designation"]').val(localStorage.getItem('designation'));
+				}
+				
+				if(localStorage.getItem('empid')!=null){
+					$('input[name="emp_id"]').val(localStorage.getItem('empid'));
+				}
+				
+				if(localStorage.getItem('profile_pic')!=null){
+					$('.profile-pic-circle').css('background-image', 'url(http://himanshuverma.co.in/godrej/uploads/'+localStorage.getItem('profile_pic')+')')
+					
+					$('input[name="profile_pic"]').val(localStorage.getItem('profile_pic'));
+				}
+				
+				if(localStorage.getItem('gender')!=null){
+					$('select[name="gender"] option[value="'+localStorage.getItem('gender')+'"]').attr('selected','selected');
+					
+				}
+				
+				
+			
+			
+				$('#profile_id').val(localStorage.getItem('userid'));
+				
+			
+				$('.signin_btn').click(function(){
+					$('.failed').hide();
+					$('.processing').hide();
+					$('.success').hide();
+					
+					 $("#sign_up").validate({
+      				  submitHandler:function (form){
+						  	///
+									$('.signin_btn').attr('disabled','disabled');
+									$('.processing').show();
+									
+										var signup_data=$('#sign_up').serialize();
+									
+									
+												
+												
+												
+												  localStorage.profile_pic=$('input[name="profile_pic"]').val();
+												  localStorage.designation=$('select[name="designation"]').val();
+												  localStorage.gender=$('select[name="gender"]').val();
+												  localStorage.dob=$('input[name="dob"]').val();
+												  localStorage.name=$('input[name="name"]').val();
+									
+										
+										$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'http://himanshuverma.co.in/godrej/profile_update.php',
+										  data:signup_data,
+										  success:function(data){
+											  if(data=='1'){
+												  
+												  
+												  
+												  $('.processing').hide();
+												  
+												  $('.login_input').val('');
+												  $('.success').show();
+												  if(localStorage.getItem('first')=='0'){
+													  localStorage.first=1;
+												  setTimeout(function(){ window.location.href='welcome.html' }, 2000);
+												  }else{
+													  setTimeout(function(){ window.location.href='menu.html' }, 2000);
+												  }
+											  }else if(data=='2'){
+												  $('.processing').hide();
+												  $('.already_account_alert').show();
+												  //setTimeout(function(){ window.location.href='login.html' }, 2000);
+												  $('.signin_btn').removeAttr('disabled');	
+											  }else{
+												  $('.processing').hide();
+												  $('.failed').show();
+												  $('.signin_btn').removeAttr('disabled');
+											  }
+											  
+											  
+											  },
+										  error:function(){
+											
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+											},
+										  fail: function(){
+											 
+											$('.failed').show();
+											$('.signin_btn').removeAttr('disabled');
+										  },
+										  timeout: 40000 
+									  
+									  })
+							
+							
+							
+							
+							////
+						  
+						  
+						  
+                     
+					 	 }
+                      });
+					
+				
+					
+				})
+				
+			})
+		 </script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

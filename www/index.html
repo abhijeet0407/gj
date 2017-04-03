@@ -1,0 +1,175 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+            }
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+	
+        document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", setupFCM);
+    }
+
+    // device APIs are available
+    function setupFCM(){
+
+    	if (typeof FCMPlugin != 'undefined') {
+                FCMPlugin.getToken((token) => {
+                  console.log(token);
+                }, (error) => {
+                  console.log('error retrieving token: ' + error);
+                });
+              }
+
+              
+    }
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+		//alert("Device Ready")
+		//push init
+
+		/*FCMPlugin.onTokenRefresh(function(token){
+    		alert( token );
+    		move_on();	
+		});*/
+	
+			/*		var push = PushNotification.init({
+						android: {
+							senderID: "499804570054"
+						},
+						ios: {
+							alert: "true",
+							badge: "true",
+							sound: "true"
+						},
+						windows: {}
+					});*/
+	//push init end				
+					
+					
+		/*if(localStorage.getItem('regid')==null){
+	
+			
+			push.on('registration', function(data) {
+				// data.registrationId
+				//$('#sds').text(data.registrationId)
+//				alert(data.registrationId);
+				
+				$.ajax({
+									  	  crossDomain:true,	
+										  type:'POST',
+										  url:'https://himanshuverma.co.in/godrej/reg_ios.php',
+										  data:'reg='+data.registrationId,
+										  success:function(data){
+											  localStorage.regid='set';
+											  move_on();	
+											  
+										  }, error:function(){
+											move_on();	
+											},
+										  fail: function(){
+											move_on();	
+										  },
+										  timeout: 40000 
+				})
+				
+				
+				
+			});
+                        move_on();
+		}else{
+			move_on();	
+		}*/
+
+/*push.on('notification', function(data) {
+	//alert(data.title+" Message: " +data.message+" type: "+data.additionalData.type);
+    // data.message,
+    // data.title,
+    // data.count,
+    // data.sound,
+    // data.image,
+   // data.additionalData
+  
+	if(localStorage.getItem('userid')==null){
+		window.location.href='login.html'
+	}else{
+		if(data.additionalData.type=='news'){
+		window.location.href='news.html'
+		}else{
+			window.location.href='news.html'
+		}
+	}
+});
+
+push.on('error', function(e) {
+    // e.message
+		//alert(e.message);
+});*/
+	
+	
+	function move_on(){
+				if(localStorage.getItem('userid')==null){
+					setTimeout(function(){ window.location.href='login.html' }, 2000);	
+				}else{
+					setTimeout(function(){ window.location.href='menu.html' }, 2000);	
+				}
+			}
+		
+		
+    }
+
+    </script>
+
+
+        
+    </head>
+    <body onLoad="onLoad()">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <img class="ri" src="img/godrej-icon-main.png" width="300" />
+      
+		
+      
+    </div> <!-- /container -->       
+       
+
+    </body>
+</html>
