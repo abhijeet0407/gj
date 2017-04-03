@@ -45,12 +45,14 @@
     	if (typeof FCMPlugin != 'undefined') {
                 FCMPlugin.getToken((token) => {
                   console.log(token);
+                  alert(token)
                 }, (error) => {
+                	alert('error retrieving token: ' +error)
                   console.log('error retrieving token: ' + error);
                 });
               }
 
-              
+
     }
     //
     function onDeviceReady() {
