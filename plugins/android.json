@@ -7,16 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.godrej.app"
-        },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.godrej.app"
         },
         "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.godrej.app"
-        },
-        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.godrej.app"
         },
         "cordova-plugin-splashscreen": {
@@ -33,6 +27,12 @@
             "PACKAGE_NAME": "com.godrej.app"
         },
         "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.godrej.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.godrej.app"
+        },
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.godrej.app"
         }
     },

@@ -299,6 +299,14 @@ module.exports = [
         "clobbers": [
             "FCMPlugin"
         ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "id": "phonegap-plugin-push.PushNotification",
+        "pluginId": "phonegap-plugin-push",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -313,7 +321,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.2",
     "com.phonegap.plugins.PushPlugin": "2.5.0",
     "cordova-plugin-device": "1.1.6-dev",
-    "cordova-plugin-fcm": "2.1.1"
+    "cordova-plugin-fcm": "2.1.1",
+    "phonegap-plugin-push": "1.10.0"
 }
 // BOTTOM OF METADATA
 });

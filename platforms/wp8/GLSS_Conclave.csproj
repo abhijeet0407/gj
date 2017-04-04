@@ -226,9 +226,6 @@
         </PostBuildEvent>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Plugins\cordova-plugin-camera\Camera.cs" />
-    </ItemGroup>
-    <ItemGroup>
         <Compile Include="Plugins\cordova-plugin-file\File.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -274,5 +271,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Plugins\cordova-plugin-device\Device.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\cordova-plugin-camera\Camera.cs" />
     </ItemGroup>
 </Project>

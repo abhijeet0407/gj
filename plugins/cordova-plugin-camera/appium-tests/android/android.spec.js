@@ -21,12 +21,10 @@
  *
 */
 
-// these tests are meant to be executed by Cordova ParaMedic Appium runner
-// you can find it here: https://github.com/apache/cordova-paramedic/
+// these tests are meant to be executed by Cordova Medic Appium runner
+// you can find it here: https://github.com/apache/cordova-medic/
 // it is not necessary to do a full CI setup to run these tests
-// Run:
-//      node cordova-paramedic/main.js --platform android --plugin cordova-plugin-camera --skipMainTests --target <emulator name>
-// Please note only Android 5.1 and 4.4 are supported at this point.
+// just run "node cordova-medic/medic/medic.js appium --platform android --plugins cordova-plugin-camera"
 
 'use strict';
 
@@ -42,7 +40,6 @@ var DEFAULT_SCREEN_WIDTH = 360;
 var DEFAULT_SCREEN_HEIGHT = 567;
 var DEFAULT_WEBVIEW_CONTEXT = 'WEBVIEW';
 var PROMISE_PREFIX = 'appium_camera_promise_';
-var CONTEXT_NATIVE_APP = 'NATIVE_APP';
 
 describe('Camera tests Android.', function () {
     var driver;
@@ -59,8 +56,6 @@ describe('Camera tests Android.', function () {
     var appiumSessionStarted = false;
     // determine if camera is present on the device/emulator
     var cameraAvailable = false;
-    // determine if emulator is within a range of acceptable resolutions able to run these tests
-    var isResolutionBad = true;
     // a path to the image we add to the gallery before test run
     var fillerImagePath;
 
@@ -73,9 +68,10 @@ describe('Camera tests Android.', function () {
         return PROMISE_PREFIX + promiseCount;
     }
 
-    function gracefullyFail(error) {
+    function saveScreenshotAndFail(error) {
         fail(error);
-        return driver
+        return screenshotHelper
+            .saveScreenshot(driver)
             .quit()
             .then(function () {
                 return getDriver();
@@ -108,7 +104,7 @@ describe('Camera tests Android.', function () {
         return driver
             .context(webviewContext)
             .execute(cameraHelper.getPicture, [options, promiseId])
-            .context(CONTEXT_NATIVE_APP)
+            .context('NATIVE_APP')
             .then(function () {
                 if (skipUiInteractions) {
                     return;
@@ -125,7 +121,7 @@ describe('Camera tests Android.', function () {
                             y: Math.round(screenHeight / 4)
                         });
                     swipeRight
-                        .press({x: 10, y: Math.round(screenHeight / 4)})
+                        .press({x: 10, y: 150})
                         .wait(300)
                         .moveTo({x: Math.round(screenWidth - (screenWidth / 8)), y: 0})
                         .wait(1500)
@@ -138,12 +134,19 @@ describe('Camera tests Android.', function () {
                             .performTouchAction(tapTile);
                     }
                     return driver
-                        .waitForElementByAndroidUIAutomator('new UiSelector().text("Gallery");', 20000)
+                        .waitForElementByXPath('//android.widget.TextView[@text="Gallery"]', 20000)
+                        .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                        .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                        .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                        .elementByXPath('//android.widget.TextView[@text="Gallery"]')
                         .fail(function () {
-                            // If the Gallery button is not present, swipe right to reveal the Gallery button!
                             return driver
                                 .performTouchAction(swipeRight)
-                                .waitForElementByAndroidUIAutomator('new UiSelector().text("Gallery");', 20000)
+                                .waitForElementByXPath('//android.widget.TextView[@text="Gallery"]', 20000)
+                                .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                                .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                                .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                                .elementByXPath('//android.widget.TextView[@text="Gallery"]');
                         })
                         .click()
                         // always wait before performing touchAction
@@ -152,9 +155,13 @@ describe('Camera tests Android.', function () {
                 }
                 // taking a picture from camera
                 return driver
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*shutter.*")', MINUTE / 2)
+                    .waitForElementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]', MINUTE / 2)
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]')
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]')
                     .click()
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*done.*")', MINUTE / 2)
+                    .waitForElementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]', MINUTE / 2)
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]')
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]')
                     .click();
             })
             .then(function () {
@@ -163,7 +170,7 @@ describe('Camera tests Android.', function () {
                 }
                 if (options.allowEdit) {
                     return driver
-                        .waitForElementByAndroidUIAutomator('new UiSelector().text("Save")', MINUTE)
+                        .waitForElementByXPath('//*[contains(@resource-id,\'save\')]', MINUTE)
                         .click();
                 }
             })
@@ -196,19 +203,16 @@ describe('Camera tests Android.', function () {
     // deletes the latest image from the gallery
     function deleteImage() {
         var holdTile = new wd.TouchAction();
-        holdTile
-            .press({x: Math.round(screenWidth / 4), y: Math.round(screenHeight / 5)})
-            .wait(1000)
-            .release();
+        holdTile.press({x: Math.round(screenWidth / 4), y: Math.round(screenHeight / 5)}).wait(1000).release();
         return driver
             // always wait before performing touchAction
             .sleep(7000)
             .performTouchAction(holdTile)
-            .elementByAndroidUIAutomator('new UiSelector().text("Delete")')
+            .elementByXPath('//android.widget.TextView[@text="Delete"]')
             .then(function (element) {
                 return element
                     .click()
-                    .elementByAndroidUIAutomator('new UiSelector().text("OK")')
+                    .elementByXPath('//android.widget.Button[@text="OK"]')
                     .click();
             }, function () {
                 // couldn't find Delete menu item. Possibly there is no image.
@@ -258,7 +262,7 @@ describe('Camera tests Android.', function () {
                             .then(spec);
                     });
             })
-            .fail(gracefullyFail);
+            .fail(saveScreenshotAndFail);
     }
 
     // produces a generic spec function which
@@ -276,27 +280,18 @@ describe('Camera tests Android.', function () {
         };
     }
 
-    function checkSession(done, skipResolutionCheck) {
+    function checkSession(done) {
         if (!appiumSessionStarted) {
-            fail('Failed to start a session ' + (lastFailureReason ? lastFailureReason : ''));
+            fail('Failed to start a session');
             done();
-        }
-        if (!skipResolutionCheck && isResolutionBad) {
-            fail('The resolution of this target device is not within the appropriate range of width: blah-blah and height: bleh-bleh. The target\'s current resolution is: ' + isResolutionBad);
         }
     }
 
     function checkCamera(pending) {
         if (!cameraAvailable) {
-            pending('This test requires a functioning camera on the Android device/emulator, and this test suite\'s functional camera test failed on your target environment.');
+            pending('This test requires camera');
         }
     }
-    afterAll(function (done) {
-        checkSession(done);
-        driver
-            .quit()
-            .done(done);
-    }, MINUTE);
 
     it('camera.ui.util configuring driver and starting a session', function (done) {
         getDriver()
@@ -307,19 +302,18 @@ describe('Camera tests Android.', function () {
     }, 10 * MINUTE);
 
     it('camera.ui.util determine screen dimensions', function (done) {
-        checkSession(done, /*skipResolutionCheck?*/ true); // skip the resolution check here since we are about to find out in this spec!
+        checkSession(done);
         driver
-            .context(CONTEXT_NATIVE_APP)
-            .getWindowSize()
+            .context(webviewContext)
+            .execute(function () {
+                return {
+                    'width': screen.availWidth,
+                    'height': screen.availHeight
+                };
+            }, [])
             .then(function (size) {
                 screenWidth = Number(size.width);
                 screenHeight = Number(size.height);
-                isResolutionBad = false;
-                /*
-                TODO: what are acceptable resolution values?
-                need to check what the emulators used in CI return.
-                and also what local device definitions work and dont
-                */
             })
             .done(done);
     }, MINUTE);
@@ -372,12 +366,14 @@ describe('Camera tests Android.', function () {
                     .then(function () {
                         return getPicture(options, true);
                     })
-                    .context(CONTEXT_NATIVE_APP)
+                    .context('NATIVE_APP')
                     .then(function () {
                         // try to find "Gallery" menu item
                         // if there's none, the gallery should be already opened
                         return driver
-                            .waitForElementByAndroidUIAutomator('new UiSelector().text("Gallery")', 20000)
+                            .waitForElementByXPath('//android.widget.TextView[@text="Gallery"]', 20000)
+                            .elementByXPath('//android.widget.TextView[@text="Gallery"]')
+                            .elementByXPath('//android.widget.TextView[@text="Gallery"]')
                             .then(function (element) {
                                 return element.click();
                             }, function () {
@@ -388,13 +384,13 @@ describe('Camera tests Android.', function () {
                         // if the gallery is opened on the videos page,
                         // there should be a "Choose video" caption
                         return driver
-                            .elementByAndroidUIAutomator('new UiSelector().text("Choose video")')
+                            .elementByXPath('//*[@text="Choose video"]')
                             .fail(function () {
                                 throw 'Couldn\'t find "Choose video" element.';
                             });
                     })
                     .deviceKeyEvent(BACK_BUTTON)
-                    .elementByAndroidUIAutomator('new UiSelector().text("Gallery")')
+                    .elementByXPath('//android.widget.TextView[@text="Gallery"]')
                     .deviceKeyEvent(BACK_BUTTON)
                     .finally(function () {
                         return driver
@@ -441,8 +437,10 @@ describe('Camera tests Android.', function () {
                     .then(function () {
                         return getPicture(options, true);
                     })
-                    .context(CONTEXT_NATIVE_APP)
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*cancel.*")', MINUTE / 2)
+                    .context("NATIVE_APP")
+                    .waitForElementByXPath('//android.widget.ImageView[contains(@resource-id,\'cancel\')]', MINUTE / 2)
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'cancel\')]')
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'cancel\')]')
                     .click()
                     .then(function () {
                         return checkPicture(false);
@@ -468,11 +466,18 @@ describe('Camera tests Android.', function () {
                     .then(function () {
                         return getPicture(options, true);
                     })
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*shutter.*")', MINUTE / 2)
+                    .context('NATIVE_APP')
+                    .waitForElementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]', MINUTE / 2)
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]')
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'shutter\')]')
                     .click()
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*done.*")', MINUTE / 2)
+                    .waitForElementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]', MINUTE / 2)
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]')
+                    .elementByXPath('//android.widget.ImageView[contains(@resource-id,\'done\')]')
                     .click()
-                    .waitForElementByAndroidUIAutomator('new UiSelector().resourceIdMatches(".*discard.*")', MINUTE / 2)
+                    .waitForElementByXPath('//*[contains(@resource-id,\'discard\')]', MINUTE / 2)
+                    .elementByXPath('//*[contains(@resource-id,\'discard\')]')
+                    .elementByXPath('//*[contains(@resource-id,\'discard\')]')
                     .click()
                     .then(function () {
                         return checkPicture(false);
@@ -602,7 +607,7 @@ describe('Camera tests Android.', function () {
             // delete exactly one latest picture
             // this should be the picture we've taken in the first spec
             driver
-                .context(CONTEXT_NATIVE_APP)
+                .context('NATIVE_APP')
                 .deviceKeyEvent(BACK_BUTTON)
                 .sleep(1000)
                 .deviceKeyEvent(BACK_BUTTON)
@@ -610,9 +615,9 @@ describe('Camera tests Android.', function () {
                 .deviceKeyEvent(BACK_BUTTON)
                 .elementById('Apps')
                 .click()
-                .elementByAndroidUIAutomator('new UiSelector().text("Gallery")')
+                .elementByXPath('//android.widget.TextView[@text="Gallery"]')
                 .click()
-                .elementByAndroidUIAutomator('new UiSelector().textContains("Pictures")')
+                .elementByXPath('//android.widget.TextView[contains(@text,"Pictures")]')
                 .click()
                 .then(deleteImage)
                 .deviceKeyEvent(BACK_BUTTON)
@@ -625,4 +630,10 @@ describe('Camera tests Android.', function () {
         }, 3 * MINUTE);
     });
 
+    it('camera.ui.util Destroy the session', function (done) {
+        checkSession(done);
+        driver
+            .quit()
+            .done(done);
+    }, 5 * MINUTE);
 });
