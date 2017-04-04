@@ -36,11 +36,11 @@
     function onLoad() {
 	
         document.addEventListener("deviceready", onDeviceReady, false);
-        document.addEventListener("deviceready", setupFCM);
+       
     }
 
     // device APIs are available
-    function setupFCM(){
+    /*function setupFCM(){
 
     	if (typeof FCMPlugin != 'undefined') {
                 FCMPlugin.getToken((token) => {
@@ -53,7 +53,7 @@
               }
 
 
-    }
+    }*/
     //
     function onDeviceReady() {
         // Now safe to use device APIs
@@ -64,6 +64,23 @@
     		alert( token );
     		move_on();	
 		});*/
+		alert('token2')
+
+		if (typeof FCMPlugin != 'undefined') {
+			alert('token')
+			console.log(FCMPlugin);
+			FCMPlugin.onTokenRefresh(function(token){
+				    alert( token );
+				});
+                FCMPlugin.getToken((token) => {
+                  console.log(token);
+                  alert(token)
+                  move_on();
+                }, (error) => {
+                	alert('error retrieving token: ' +error)
+                  console.log('error retrieving token: ' + error);
+                });
+              }
 	
 			/*		var push = PushNotification.init({
 						android: {
