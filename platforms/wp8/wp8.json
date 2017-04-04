@@ -105,6 +105,10 @@
         },
         "cordova-plugin-fcm": {
             "PACKAGE_NAME": "{7b8f7990-0e12-11e7-86b9-d11436bd7d92}"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "85075801930",
+            "PACKAGE_NAME": "{7b8f7990-0e12-11e7-86b9-d11436bd7d92}"
         }
     },
     "dependent_plugins": {},
@@ -408,6 +412,14 @@
             "clobbers": [
                 "FCMPlugin"
             ]
+        },
+        {
+            "file": "plugins/phonegap-plugin-push/www/push.js",
+            "id": "phonegap-plugin-push.PushNotification",
+            "pluginId": "phonegap-plugin-push",
+            "clobbers": [
+                "PushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -420,6 +432,7 @@
         "cordova-plugin-splashscreen": "4.0.2",
         "com.phonegap.plugins.PushPlugin": "2.5.0",
         "cordova-plugin-device": "1.1.6-dev",
-        "cordova-plugin-fcm": "2.1.1"
+        "cordova-plugin-fcm": "2.1.1",
+        "phonegap-plugin-push": "1.10.0"
     }
 }

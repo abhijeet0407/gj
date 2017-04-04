@@ -43,7 +43,7 @@
     //
     function onDeviceReady() {
         // Now safe to use device APIs
-		//alert("Device Ready")
+		alert("Device Ready")
 		//push init
 //		move_on();	
 					var push = PushNotification.init({
@@ -59,14 +59,14 @@
 					});
 	//push init end				
 					
-					
+				alert(localStorage.getItem('regid'));	
 		if(localStorage.getItem('regid')==null){
 	
 			
 			push.on('registration', function(data) {
 				// data.registrationId
 				//$('#sds').text(data.registrationId)
-//				alert(data.registrationId);
+				alert(data.registrationId);
 alert(data);
 				
 				$.ajax({
@@ -92,6 +92,7 @@ alert(data);
 			});
                         move_on();
 		}else{
+			alert('not null regid')
 			move_on();	
 		}
 
